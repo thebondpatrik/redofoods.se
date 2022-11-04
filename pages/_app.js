@@ -1,5 +1,5 @@
 import "../styles/app.scss"
-
+import Script from "next/script"
 import { RichTextSchema, storyblokInit, apiPlugin } from "@storyblok/react"
 import cloneDeep from "clone-deep"
 import ReactDOMServer from "react-dom/server"
@@ -39,7 +39,24 @@ storyblokInit({
 })
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.ANALYTICS_ID}');
+        `}
+      </Script>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp

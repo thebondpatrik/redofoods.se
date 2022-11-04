@@ -7,6 +7,7 @@ const nextConfig = {
   
   env: {
     STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN,
+    ANALYTICS_ID: process.env.ANALYTICS_ID, 
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
