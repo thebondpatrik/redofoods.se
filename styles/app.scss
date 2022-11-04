@@ -68,5 +68,18 @@ body {
 
 
 .redo-hero {
-  
+  .content {
+    b {
+      @include pixelsToFluid(font-size, 24px, 32px, 38px);
+      @include pixelsToFluid(line-height, 30px, 38px, 44px);
+      @include responsive-gutter-1x(bottom, 20px);
+      text-transform: uppercase;
+      font-family: $fontFamilyHeading;
+      font-weight: 400;
+
+      i {
+        @include pixelsToFluid(font-size, 29px, 37px, 42px);
+      }
+    }
+  }
 }
