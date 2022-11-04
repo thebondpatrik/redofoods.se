@@ -35,7 +35,7 @@ const ProductModal = () => {
               <Product blok={currentProduct.content} />
             : null      
           }
-          <button className={styles.close} onClick={close}><img src="/close.svg" alt="" /></button>
+          <button className={styles.close} onClick={close}><img src="/close.svg" alt="" />Close</button>
         </div>
       </div>
     </>
