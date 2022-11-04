@@ -34,7 +34,7 @@ const Picture = ({ blok }) => {
           : null
         }
         {
-          blok.default ? (<img src={blok.default.filename} alt={blok.default.alt} />) : null
+          blok.default ? (<img src={blok.default.filename} alt={blok.default.alt ?? "" } />) : null
         }
         
       </picture>

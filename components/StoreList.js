@@ -17,7 +17,7 @@ const StoreList = ({ blok }) => {
           blok.stores.map((store, index) => {
             return (
               <div className={cn(styles.store)} {...storyblokEditable(store)} key={index}>
-                <img style={getStoreStyle(store)} src={store.image.filename}  alt={store.alt} />
+                <img style={getStoreStyle(store)} src={store.image.filename}  alt={store.image.alt} />
               </div>
             )
           }) : null
