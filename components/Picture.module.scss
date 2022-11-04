@@ -1,0 +1,26 @@
+.picture {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  picture {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.auto-height {
+  img {
+    height: auto !important;
+  }
+}
+
+.picture-full-width {
+  object-fit: contain;
+  height: 100%;
+}

@@ -1,0 +1,26 @@
+.email {
+
+}
+
+.phone {
+
+}
+
+.instagram {
+
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  @include toRem(margin-bottom, 10px);
+  
+  img {
+    @include toRem(margin-right, 5px);
+  }
+
+  a {
+    color: $purple;
+    margin: 0;
+  }
+}

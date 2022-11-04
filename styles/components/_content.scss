@@ -1,0 +1,42 @@
+.content {
+
+  h1:first-of-type,
+  h2:first-of-type,
+  h3:first-of-type {
+    margin-top: 0;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+  
+    &:has(.purple-text) {
+      text-decoration-color: $purple !important;
+    }
+    &:has(.pink-text) {
+      text-decoration-color: $pink !important;
+    }
+    &:has(.white-text) {
+      text-decoration-color: $white !important;
+    }
+  }
+
+  .whtie-text,
+  .purple-text,
+  .pink-text {
+    cursor: pointer;
+  }
+
+  .white-text {
+    color: $white;
+  }
+
+  .purple-text {
+    color: $purple;
+  }
+
+  .pink-text {
+    color: $pink;
+  }
+}

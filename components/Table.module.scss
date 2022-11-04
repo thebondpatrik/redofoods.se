@@ -1,0 +1,42 @@
+.table {
+  @include toRem(margin-bottom, 20px); 
+  display: flex;
+  width: 100%;
+  overflow-y: scroll;
+
+  .title {
+    @include toRem(margin-bottom, 10px);
+    display: block;
+  }
+
+  .column {
+    flex: 1 1 auto;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  .row {
+    @include toRem(margin-bottom, 10px);
+  }
+
+  &.yellow-bg {
+    color: $purple;
+  }
+
+  &.green-bg {
+    color: $white;
+  }
+ 
+  p, strong, b, i {
+    @include toRem(font-size, 14px);
+    @include toRem(line-height, 19px);
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+}

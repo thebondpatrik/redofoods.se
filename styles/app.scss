@@ -1,0 +1,72 @@
+@import "vendors/all";
+@import "abstracts/all";
+@import "core/all";
+@import "components/all";
+
+
+// .row {
+//   @media #{$breakpoint-md-up} {
+//     height: 100%;
+//   }
+// }
+
+html,
+body {
+
+  > #__next {
+    height: 100%;
+    
+    > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.no-gutter {
+  padding: 0;
+}
+
+.no-top-gutter {
+  padding-top: 0;
+}
+
+.no-left-gutter {
+  padding-left: 0;
+}
+
+.no-bottom-gutter {
+  padding-bottom: 0;
+}
+
+.no-right-gutter {
+  padding-right: 0;
+}
+
+.extra-spacing {
+  @include pixelsToFluid(padding, 20px, 80px, 90px);
+}
+
+.ReactModalPortal {
+  position: relative;
+  z-index: 2;
+
+  .ReactModal__Content {
+    padding: 0 !important;
+  }
+}
+
+
+.redo-hero {
+  
+}

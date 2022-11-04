@@ -1,0 +1,6 @@
+.product {
+  h1, h2, h3, h4 {
+    @include pixelsToFluid(font-size, 25px, 30px, 40px, 1440px);
+    @include pixelsToFluid(line-height, 34px, 39px, 49px, 1440px);
+  }
+}

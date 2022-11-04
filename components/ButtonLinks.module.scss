@@ -1,0 +1,22 @@
+.button-links {
+  display: flex;
+  flex-wrap: wrap;
+  @include pixelsToFluid(margin-top, 20px, 40px, 60px);
+
+  button {
+    width: 100%;
+  }
+
+  @media #{$breakpoint-sm-up} {
+    flex-wrap: nowrap;
+
+    button {
+      width: auto;
+
+      & + button {
+        @include toRem(margin-left, 10px);
+      }
+    }
+  }
+
+}

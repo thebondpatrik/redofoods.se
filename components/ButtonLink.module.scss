@@ -1,0 +1,12 @@
+.button {
+  @include toRem(border-radius, 15px);
+  @include toRem(padding, 18px);
+  @include toRem(font-size, 18px);
+  @include toRem(margin-top, 20px);
+  font-weight: 700;
+  border: 0;
+  color: $white;
+  background-color: $pink;
+  text-transform: uppercase;
+  cursor: pointer;
+}

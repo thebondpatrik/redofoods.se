@@ -1,0 +1,53 @@
+@use "sass:math";
+
+@function strip-units($number) {
+  @return calc($number / ($number * 0 + 1));
+}
+
+@function calculateRem($size) {
+  $remSize: calc($size / 10px);
+  @return #{$remSize}rem;
+}
+
+@function calculateClamp(
+  $minimum,
+  $preferred,
+  $maximum,
+  $preferred_viewport_width: $max-width
+) {
+  $clamp_parameter_1: calculateRem($minimum);
+  
+  $clamp_parameter_2: strip-units(math.div($preferred + 0, $preferred_viewport_width) * 100) * 1vw;
+  $clamp_parameter_3: calculateRem($maximum);
+
+  @return clamp(#{$clamp_parameter_1}, #{$clamp_parameter_2}, #{$clamp_parameter_3});
+}
+
+@mixin responsive-gutter-1x($direction: bottom, $gutter: 20px) {
+  @if $direction == top {
+    margin-top: $gutter;
+    margin-top: calculateClamp(calc($gutter/2), calc($gutter * 0.75), $gutter);
+  } @else if $direction == bottom {
+    margin-bottom: $gutter;
+    margin-bottom: calculateClamp(calc($gutter/2), calc($gutter * 0.75), $gutter);
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+@mixin responsive-gutter-2x($direction: bottom, $gutter: 20px) {
+  @if $direction == top {
+    margin-top: calc($gutter*2);
+    margin-top: calculateClamp($gutter, ($gutter * 1.5), ($gutter*2));
+  } @else if $direction == bottom {
+    margin-bottom: calc($gutter*2);
+    margin-bottom: calculateClamp($gutter, ($gutter * 1.5), ($gutter*2));
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+
+@mixin pixelsToFluid($property, $minimum, $preferred, $maximum, $preferred_viewport_width: $max-width) {
+  #{$property}: calculateRem($preferred);
+  #{$property}: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
+}

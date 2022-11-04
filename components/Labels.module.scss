@@ -1,0 +1,24 @@
+.labels {
+  @include pixelsToFluid(padding-top, 20px, 40px, 60px);
+  @include toRem(gap, 20px);
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: auto;
+
+  @media #{$breakpoint-md-up} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.label {
+  @include toRem(padding, 20px);
+  @include toRem(font-size, 20px);
+  @include toRem(min-height, 97px);
+  height: 100%;
+  box-sizing: border-box;
+  background-color: $white;
+  font-family: $fontFamilyHeading;
+  color: $purple;
+  display: flex;
+  align-items: center;
+}

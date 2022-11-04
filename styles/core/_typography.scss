@@ -1,0 +1,105 @@
+
+@include font-face($fontFamilyHeading, "/fonts/made-Soulmaze", 400, "normal", woff2);
+@include font-face($fontFamilyBody, "/fonts/Poppins-Bold", 700, "normal", woff2);
+@include font-face($fontFamilyBody, "/fonts/Poppins-ExtraBold", 900, "normal", woff2);
+@include font-face($fontFamilyBody, "/fonts/Poppins-Medium", 500, "normal", woff2);
+@include font-face($fontFamilyBody, "/fonts/Poppins-Regular", 400, "normal", woff2);
+
+
+html { 
+  font-size: 62.5%; // 10px
+}
+
+body {
+  background: white;
+  font-family: $fontFamilyBody, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+}
+
+p,
+a,
+.btn-link {
+  @include pixelsToFluid(font-size, 16px, 20px, 19px);
+  @include pixelsToFluid(line-height, 26px, 28px, 30px);
+  @include responsive-gutter-1x(bottom, 20px);
+}
+
+.preamble {
+  @include pixelsToFluid(font-size, 22px, 24px, 30px);
+  @include pixelsToFluid(line-height, 32px, 34px, 40px);
+
+  .product & {
+    @include toRem(font-size, 19px);
+    @include toRem(line-height, 29px);
+  }
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+a,
+.btn-link {
+  text-decoration: none;
+
+  svg {
+    @include toRem(margin-left, 5px);
+    @include pixelsToFluid(width, 15px, 18px, 20px);
+    @include pixelsToFluid(height, 9px, 12px, 14px);
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: $fontFamilyHeading, "Times", serif;
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+h1 {
+  @include pixelsToFluid(font-size, 30px, 115px, 115px);
+  @include pixelsToFluid(line-height, 35px, 120px, 120px);
+  @include responsive-gutter-1x(bottom, 20px);
+  margin-top: 0;
+  
+  i {
+    @include pixelsToFluid(font-size, 35px, 50px, 55px);
+  }
+}
+
+h2 {
+  @include pixelsToFluid(font-size, 30px, 45px, 50px);
+  @include responsive-gutter-1x(bottom, 20px);
+
+  i {
+    @include pixelsToFluid(font-size, 35px, 50px, 55px);
+  }
+}
+
+h3 {
+  @include pixelsToFluid(font-size, 24px, 32px, 38px);
+  @include pixelsToFluid(line-height, 30px, 38px, 44px);
+  @include responsive-gutter-1x(bottom, 20px);
+
+  i {
+    @include pixelsToFluid(font-size, 29px, 37px, 42px);
+  }
+}
+
+h4 {font-size: 1.563rem;}
+
+h5 {font-size: 1.25rem;}
+
+small, .text_small {font-size: 0.8rem;}
+
+.-center-text {
+  text-align: center;
+  display: block;
+}
+
+b {
+  font-weight: 700;
+}

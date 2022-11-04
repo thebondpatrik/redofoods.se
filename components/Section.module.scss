@@ -1,0 +1,133 @@
+.pink {
+  background-color: $pink;
+}
+
+.green {
+  background-color: $green;
+
+  [class^="Table"] {
+    color: $white;
+  }
+}
+
+.purple {
+  background-color: $purple;
+}
+
+.blue {
+  background-color: $blue;
+}
+
+.full-height {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.top-lined,
+.bottom-lined {
+  position: relative;
+  z-index: 2;
+
+  &:before,
+  &:after {
+    @include toRem(height, 27px);
+    content: "";
+    width: 100%;
+    background-image: url("/line.svg");
+    background-repeat: repeat-x;
+    position: absolute;
+    display: none;
+  }
+}
+
+.bottom-lined {
+  &:after {
+    bottom: 0;
+    display: block;
+  }
+}
+
+.top-lined {
+  &:after {
+    display: block;
+  }
+}
+
+.side-gutter,
+.gutter-bottom,
+.gutter-left,
+.gutter-right,
+.gutter-top,
+.section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.side-gutter {
+  @include pixelsToFluid(padding-left, 20px, 80px, 90px);
+  @include pixelsToFluid(padding-right, 20px, 80px, 90px);
+}
+
+.gutter-left {
+  @include pixelsToFluid(padding-left, 20px, 80px, 90px);
+}
+
+.gutter-right {
+  @include pixelsToFluid(padding-right, 20px, 80px, 90px);
+}
+
+.gutter-top {
+  @include pixelsToFluid(padding-top, 60px, 100px, 120px);
+}
+
+.gutter-bottom {
+  @include pixelsToFluid(padding-bottom, 60px, 100px, 120px);
+}
+
+.section {
+  position: relative;
+  height: 100%;
+
+  & > [class^="Section_gutter"] {
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+.has-bg {
+  > div {
+    &:first-child {
+      z-index: 2;
+      position: absolute;
+      height: 100%;
+    }
+  }
+
+  & > [class^=Picture_picture] {
+    top: 0;
+    z-index: 0;
+
+    img {
+      width: 100vw;
+      min-height: 600px;
+      height: auto;
+      object-fit: cover;
+
+      @media #{$breakpoint-xs-only} {
+        height: 100%;
+      }
+
+      @media #{$breakpoint-sm-only} {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.no-full-width-bg {
+  img {
+    width: 100% !important;
+  }
+}
