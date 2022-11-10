@@ -13,6 +13,7 @@
 .label {
   @include toRem(padding, 20px);
   @include toRem(font-size, 20px);
+  @include toRem(line-height, 26px);
   @include toRem(min-height, 97px);
   height: 100%;
   box-sizing: border-box;
