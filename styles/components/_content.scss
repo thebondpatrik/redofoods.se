@@ -40,3 +40,8 @@
     color: $pink;
   }
 }
+
+.table {
+  @include toRem(font-size, 14px);
+  @include toRem(line-height, 19px);
+}
